@@ -1,3 +1,3 @@
 # rFishStatus
 
-[![codecov](https://codecov.io/github/thomazfabrin/rFishStatus/branch/master/graphs/badge.svg)](https://codecov.io/github/thomazfabrin/rFishStatus)
+[![codecov](https://codecov.io/github/thomazfabrin/rFishStatus/branch/main/graphs/badge.svg)](https://codecov.io/github/thomazfabrin/rFishStatus)
