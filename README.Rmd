@@ -1,4 +1,3 @@
 # rFishStatus
-<!-- badges: start -->  
 [![codecov](https://codecov.io/gh/thomazfabrin/rFishStatus/branch/main/graph/badge.svg)](https://codecov.io/gh/thomazfabrin/rFishStatus)
-<!-- badges: end -->
+<!-- badges: start --> <!-- badges: end -->
