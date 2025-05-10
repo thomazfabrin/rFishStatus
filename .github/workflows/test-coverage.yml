@@ -18,11 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages('covr')
-          if (file.exists('DESCRIPTION')) {
-              install.packages('devtools')
-              devtools::install_deps(dependencies = TRUE)
-          }
+          Rscript -e "install.packages('covr')"
+          Rscript -e "if (file.exists('DESCRIPTION')) { install.packages('devtools'); devtools::install_deps(dependencies = TRUE) }"
 
       - name: Run tests and collect coverage
         run: |
