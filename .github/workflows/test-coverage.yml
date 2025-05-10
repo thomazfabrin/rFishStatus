@@ -1,0 +1,35 @@
+name: Test and Update Coverage Badge
+
+on:
+    push:
+        branches:
+            - main  # Adjust to your default branch
+
+jobs:
+    test-coverage:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+                uses: actions/checkout@v3
+
+            - name: Set up R
+                uses: r-lib/actions/setup-r@v2
+
+            - name: Install dependencies
+                run: |
+                    install.packages('covr')
+                    if (file.exists('DESCRIPTION')) {
+                        install.packages('devtools')
+                        devtools::install_deps(dependencies = TRUE)
+                    }
+
+            - name: Run tests and collect coverage
+                run: |
+                    library(covr)
+                    cov <- package_coverage()
+                    codecov(coverage = cov, token = "${{ secrets.CODECOV_TOKEN }}")
+
+            - name: Update coverage badge
+                run: |
+                    Rscript -e "covr::codecov(token = '${{ secrets.CODECOV_TOKEN }}')"
