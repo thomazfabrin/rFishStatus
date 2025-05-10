@@ -1,0 +1,22 @@
+Package: rFishStatus
+Title: A package to handle taxonomic nomenclature and and status of fish species
+Version: 0.0.0.9000
+Authors@R: 
+    c(
+        person("Thomaz", "Fabrin", , "fabrintmc@gmail.com", role = c("aut", "cre")),
+        person("Bruno", "Mioto", role = "aut"),
+        person("Weferson", "da Graça", role = "aut"),
+        person("Dayani", "Bailly", , "dayanibailly@nupelia.uem.br", role = "aut"),
+        person("Reginaldo", "Ré", , "reginaldo@utfpr.edu.br", role = "aut")
+    )
+Description: 
+    A package to handle taxonomic nomenclature and status of fish species
+    in Paraná, Brazil. It provides a set of functions to retrieve, manipulate and
+    check fish species data, including occurrences.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
