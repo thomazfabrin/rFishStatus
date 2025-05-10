@@ -1,2 +1,5 @@
 # rFishStatus
 
+  <!-- badges: start -->
+  [![Codecov test coverage](https://codecov.io/gh/thomazfabrin/rFishStatus/graph/badge.svg)](https://app.codecov.io/gh/thomazfabrin/rFishStatus)
+  <!-- badges: end -->
