@@ -33,12 +33,15 @@ jobs:
         run: |
             Rscript -e "install.packages('covr')"
             Rscript -e "install.packages('tidyverse')"
+            Rscript -e "install.packages('dotenv')"
 
       - name: Test coverage
         run: |
+          dotenv::load_dot_env()
           covr::codecov(
             quiet = FALSE,
             clean = FALSE,
+            token = Sys.getenv("CODECOV_TOKEN"),
             install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")
           )
         shell: Rscript {0}
