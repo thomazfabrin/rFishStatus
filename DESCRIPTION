@@ -27,4 +27,5 @@ LazyData: true
 Imports: 
     cli,
     dplyr,
-    stringr
+    stringr,
+    tidyr
