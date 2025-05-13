@@ -29,9 +29,10 @@ jobs:
         run: |
           R CMD INSTALL .
 
-      - name: Install covr
+      - name: Install packages
         run: |
             Rscript -e "install.packages('covr')"
+            Rscript -e "install.packages('tidyverse')"
 
       - name: Test coverage
         run: |
