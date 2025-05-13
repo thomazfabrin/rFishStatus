@@ -29,6 +29,10 @@ jobs:
         run: |
           R CMD INSTALL .
 
+      - name: Install covr
+        run: |
+            Rscript -e "install.packages('covr')"
+
       - name: Test coverage
         run: |
           covr::codecov(
