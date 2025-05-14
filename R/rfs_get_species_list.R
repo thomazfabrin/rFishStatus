@@ -19,7 +19,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
     )
 
     cli::cli_inform(
-        "Looking for uncertain species names."
+        "Looking for uncertain species."
     )
     uncertain_spp_one <- df |>
         dplyr::select(
@@ -41,6 +41,9 @@ rfs_get_species_list <- function(df, summary = FALSE) {
         dplyr::select(species_valid_name_complete) |>
         dplyr::rename(uncertain_spp = species_valid_name_complete)
 
+    cli::cli_inform(
+        "Looking for valid species."
+    )
     valid_spp_uncertain <- df |>
         dplyr::select(
             species_valid_as_complete
@@ -48,7 +51,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
         dplyr::distinct() |>
         dplyr::pull(species_valid_as_complete) |>
         na.omit()
-
+    # Get uncertain species
     uncertain_spp <- uncertain_spp_one |>
         dplyr::bind_rows(uncertain_spp_two) |>
         dplyr::distinct() |>
@@ -397,6 +400,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
             scientific_name = scientific_name_complete,
             species = scientific_name,
             status = scientific_name_status,
+            genus = scientific_name_genus,
             valid_scientific_name = species_valid_as_complete,
             authors = species_valid_name_author,
             year = species_valid_name_year
