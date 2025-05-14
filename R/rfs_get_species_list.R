@@ -50,7 +50,8 @@ rfs_get_species_list <- function(df, summary = FALSE) {
         ) |>
         dplyr::distinct() |>
         dplyr::pull(species_valid_as_complete) |>
-        na.omit()
+        na.omit() |>
+        as.character()
     # Get uncertain species
     uncertain_spp <- uncertain_spp_one |>
         dplyr::bind_rows(uncertain_spp_two) |>
@@ -277,6 +278,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
                 valid_scientific_name,
                 side = "both"
             ),
+            # Identify authors in the valid scientific name
             filter_out_one = dplyr::if_else(
                 stringr::str_detect(
                     valid_scientific_name,
@@ -285,6 +287,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
                 "Yes",
                 "No"
             ),
+            # Identify year in the valid scientific name
             filter_out_two = dplyr::if_else(
                 stringr::str_detect(
                     valid_scientific_name,
@@ -293,6 +296,7 @@ rfs_get_species_list <- function(df, summary = FALSE) {
                 "Yes",
                 "No"
             ),
+            # Identify if the scientific name is valid
             is_valid = dplyr::if_else(
                 status == "Valid",
                 "Yes",
@@ -323,6 +327,9 @@ rfs_get_species_list <- function(df, summary = FALSE) {
                     is_valid == "No") |
                 (filter_out_one == "Yes" &
                     filter_out_two == "No" &
+                    is_valid == "No") |
+                (filter_out_one == "No" &
+                    filter_out_two == "Yes" &
                     is_valid == "No")
         ) |>
         dplyr::select(-filter_out_one, -filter_out_two, -is_valid) |>
