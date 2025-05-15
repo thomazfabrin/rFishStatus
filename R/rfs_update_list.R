@@ -59,7 +59,7 @@ rfs_update_list <- function(
         )
     }
 
-    if (nrow(input_list) <= 1) {
+    if (nrow(input_list) < 1) {
         cli::cli_abort(
             "input_list is empty"
         )

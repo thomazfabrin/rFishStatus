@@ -84,7 +84,7 @@ test_that("rfs_update_list performs fuzzy matching correctly", {
   expect_true(any(grepl("fuzzy matching", result$status)))
 })
 
-test_that("rfs_update_list handles empty input_list gracefully", {
+test_that("rfs_update_list handles empty input_list", {
   input_list <- data.frame(species = character(0))
   reference_list <- rFishStatus::rfs_get_species_list(
     rFishStatus::template_ref_data
