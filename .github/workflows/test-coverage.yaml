@@ -39,7 +39,7 @@ jobs:
 
       - name: Install rnaturalearthhires
         run: |
-          Rscript -e "install.packages('rnaturalearthhires')"
+          Rscript -e "rnaturalearth::install_rnaturalearthhires()"
 
       - name: Test coverage
         run: |
