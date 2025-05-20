@@ -7,7 +7,7 @@
 rfs_get_species_list(df, summary = FALSE)
 }
 \arguments{
-\item{df}{A data frame based on the rFishStatus template (rFishStatus::template_ref_data).}
+\item{df}{A data frame based on the rFishStatus template (rFishStatus::data_template_ref).}
 }
 \value{
 A dataframe with the species list.
@@ -17,7 +17,7 @@ This function uses a dataframe of scientific names from
 organized a list of species names with their status.
 }
 \examples{
-df <- rFishStatus::template_ref_data
+df <- rFishStatus::data_template_ref
 df_list <- rfs_get_species_list(df)
 
 }

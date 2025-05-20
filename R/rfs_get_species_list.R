@@ -1,11 +1,11 @@
 #' @title Get the species list from a dataframe based on rFishStatus template
 #' @description This function uses a dataframe of scientific names from
 #' organized a list of species names with their status.
-#' @param df A data frame based on the rFishStatus template (rFishStatus::template_ref_data).
+#' @param df A data frame based on the rFishStatus template (rFishStatus::data_template_ref).
 #' @return A dataframe with the species list.
 #' @export
 #' @examples
-#' df <- rFishStatus::template_ref_data
+#' df <- rFishStatus::data_template_ref
 #' df_list <- rfs_get_species_list(df)
 #'
 

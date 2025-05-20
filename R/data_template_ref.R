@@ -21,4 +21,4 @@
 #'   \item{scientific_name_habitat}{Habitat information for the scientific name (e. g., "freshwater", "marine").}
 #' }
 #' @source Organized according to taxonomic data on Cichla.
-"template_ref_data"
+"data_template_ref"

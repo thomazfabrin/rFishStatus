@@ -16,7 +16,7 @@ test_that("rfs_update_list handles valid input correctly", {
   )
 
   reference_list <- rfs_get_species_list(
-    rFishStatus::template_ref_data
+    rFishStatus::data_template_ref
   )
 
   result <- rfs_update_list(input_list, reference_list)
@@ -75,7 +75,7 @@ test_that("rfs_update_list performs fuzzy matching correctly", {
     species = c("Acanthochromis polyacanthus", "Cichla monoculos")
   )
   reference_list <- rFishStatus::rfs_get_species_list(
-    rFishStatus::template_ref_data
+    rFishStatus::data_template_ref
   )
 
   result <- rfs_update_list(input_list, reference_list, max_dist = 2)
@@ -87,7 +87,7 @@ test_that("rfs_update_list performs fuzzy matching correctly", {
 test_that("rfs_update_list handles empty input_list", {
   input_list <- data.frame(species = character(0))
   reference_list <- rFishStatus::rfs_get_species_list(
-    rFishStatus::template_ref_data
+    rFishStatus::data_template_ref
   )
 
   expect_error(

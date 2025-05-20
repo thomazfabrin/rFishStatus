@@ -28,5 +28,9 @@ Imports:
     cli,
     dplyr,
     fuzzyjoin,
+    rfishbase,
+    rgbif,
+    rnaturalearth,
+    sf,
     stringr,
     tidyr

@@ -7,13 +7,13 @@ test_that("rfs_get_species_list handles empty dataframe", {
 })
 
 test_that("rfs_get_species_list returns a dataframe", {
-  df <- rFishStatus::template_ref_data
+  df <- rFishStatus::data_template_ref
   result <- rfs_get_species_list(df)
   expect_s3_class(result, "data.frame")
 })
 
 test_that("rfs_get_species_list handles summary parameter", {
-  df <- rFishStatus::template_ref_data
+  df <- rFishStatus::data_template_ref
   result <- rfs_get_species_list(df, summary = TRUE)
   expect_s3_class(result, "data.frame")
   expect_true("status" %in% colnames(result))
@@ -21,7 +21,7 @@ test_that("rfs_get_species_list handles summary parameter", {
 })
 
 test_that("rfs_get_species_list processes valid species correctly", {
-  df <- rFishStatus::template_ref_data
+  df <- rFishStatus::data_template_ref
   result <- rfs_get_species_list(df)
   expect_true("scientific_name" %in% colnames(result))
   expect_true("status" %in% colnames(result))
@@ -29,14 +29,14 @@ test_that("rfs_get_species_list processes valid species correctly", {
 })
 
 test_that("rfs_get_species_list handles uncertain species", {
-  df <- rFishStatus::template_ref_data
+  df <- rFishStatus::data_template_ref
   df$scientific_name_status <- "Uncertain"
   result <- rfs_get_species_list(df)
   expect_true("Uncertain" %in% result$status)
 })
 
 test_that("rfs_get_species_list includes habitat information", {
-  df <- rFishStatus::template_ref_data
+  df <- rFishStatus::data_template_ref
   df$scientific_name_habitat <- "Freshwater"
   result <- rfs_get_species_list(df)
   expect_true("valid_sci_name_habitat" %in% colnames(result))

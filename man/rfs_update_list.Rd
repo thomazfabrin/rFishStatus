@@ -61,7 +61,7 @@ input_list <- data.frame(
                "Cichla monocolos", "Cichla monoculus", "Cicla monoculus")
 )
 reference_list <- rFishStatus::rfs_get_species_list(
-   rFishStatus::template_ref_data
+   rFishStatus::data_template_ref
 )
 checked_list <- rfs_update_list(input_list, reference_list)
 }
