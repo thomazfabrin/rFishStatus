@@ -39,7 +39,7 @@ jobs:
 
       - name: Install rnaturalearthhires
         run: |
-          Rscript -e "rnaturalearth::install_rnaturalearthhires()"
+          Rscript -e "devtools::install_github('ropensci/rnaturalearthhires')"
 
       - name: Test coverage
         run: |
