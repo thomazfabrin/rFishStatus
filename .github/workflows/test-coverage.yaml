@@ -37,6 +37,9 @@ jobs:
         run: |
             Rscript -e "install.packages('covr')"
 
+      - name: Install rnaturalearthhires
+        run: |
+          Rscript -e "remotes::install_github('rnaturalearth/rnaturalearthhires')"
       - name: Test coverage
         run: |
           covr::codecov(
