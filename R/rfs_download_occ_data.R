@@ -12,7 +12,7 @@
 #' @param state State name. Default is Paraná.
 #' @param user_polygon User-defined polygon. Default is NULL.
 #' @param taxonkey GBIF taxonKey. Default is Chordata (44).
-#' @param max_attempts Maximum number of download attempts. Default is 10
+#' @param max_attempts Maximum number of download attempts. Default is 10.
 #' @param sleep_time Sleep time between download attempts. Default is 120 s.
 #' @param reverse_polygon Logical. If TRUE, the polygon will be reversed.
 #' @param folder_name Folder name where the data will be saved. Default is
