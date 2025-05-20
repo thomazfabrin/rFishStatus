@@ -1,5 +1,5 @@
 Package: rFishStatus
-Title: A package to handle taxonomic nomenclature and and status of fish species
+Title: A package to handle taxonomic nomenclature and status of fish species
 Version: 0.0.0.9000
 Authors@R: 
     c(
