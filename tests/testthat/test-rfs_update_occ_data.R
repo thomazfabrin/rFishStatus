@@ -35,10 +35,33 @@ test_that("rfs_update_occ_data handles auto family and return a data.frame", {
       folder = temp_folder
     )
   )
-  testthat::expect_s3_class(
+  expect_s3_class(
     rfs_update_occ_data(
       occurrence_df = rFishStatus::data_occ_crenicichla,
       species_database = rFishStatus::data_template_ref,
+      family_names = "auto",
+      folder = temp_folder
+    ),
+    "data.frame"
+  )
+})
+
+test_that("rfs_update_occ_data handles not found species and return a data.frame", {
+  empty_data <- data.frame()
+  temp_folder <- tempfile("occ_data_test2")
+  dir.create(temp_folder)
+  expect_no_error(
+    rfs_update_occ_data(
+      occurrence_df = rFishStatus::data_occ_crenicichla,
+      species_database = rFishStatus::data_template_ref,
+      family_names = "auto",
+      folder = temp_folder
+    )
+  )
+  expect_s3_class(
+    rfs_update_occ_data(
+      occurrence_df = rFishStatus::data_occ_crenicichla,
+      species_database = rFishStatus:::data_crenicichla,
       family_names = "auto",
       folder = temp_folder
     ),
