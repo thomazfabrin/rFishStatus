@@ -20,5 +20,5 @@
 #'   \item{all_valid_species_complete}{All valid species names associated with the scientific name. Separated by semicolons.}
 #'   \item{scientific_name_habitat}{Habitat information for the scientific name (e. g., "freshwater", "marine").}
 #' }
-#' @source Organized according to taxonomic data on Cichla.
+#' @source Organized according to taxonomic data on Cichlidae
 "data_template_ref"

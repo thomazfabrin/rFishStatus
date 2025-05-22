@@ -25,7 +25,7 @@ A data frame with the following columns:
 }
 }
 \source{
-Organized according to taxonomic data on Cichla.
+Organized according to taxonomic data on Cichlidae
 }
 \usage{
 data_template_ref

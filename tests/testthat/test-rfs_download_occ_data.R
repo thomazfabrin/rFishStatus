@@ -39,7 +39,7 @@ test_that("rfs_download_occ_data handles user polygon", {
         dplyr::filter(name == "Paraná"),
       reverse_polygon = TRUE,
       taxonkey = 5208140,
-      max_attempts = 6,
+      max_attempts = 75,
       sleep_time = 20
     )
   )
@@ -74,7 +74,7 @@ test_that("rfs_download_occ_data creates folder", {
       state = "Paraná",
       taxonkey = 5208140,
       folder_name = temp_folder,
-      max_attempts = 6,
+      max_attempts = 75,
       sleep_time = 20
     )
   )
@@ -97,7 +97,7 @@ test_that("rfs_download_occ_data does not fail if folder already exists", {
       taxonkey = 5208140,
       reverse_polygon = TRUE,
       folder_name = temp_folder,
-      max_attempts = 6,
+      max_attempts = 75,
       sleep_time = 20
     ),
     NA

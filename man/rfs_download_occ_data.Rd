@@ -34,7 +34,7 @@ rfs_download_occ_data(
 
 \item{user_polygon}{User-defined polygon. Default is NULL.}
 
-\item{max_attempts}{Maximum number of download attempts. Default is 10}
+\item{max_attempts}{Maximum number of download attempts. Default is 10.}
 
 \item{sleep_time}{Sleep time between download attempts. Default is 120 s.}
 
@@ -54,7 +54,9 @@ GBIF. Obs.: This function is unstable and may not work properly due to time
 constraints and server limitations while downloading the data. If the first
 execution did not work properly, please try to rerun the function using the
 same code. Alternatively, you can use the link, showed during function
-execution, to download the data manually.
+execution, to download the data manually. IMPORTANT: There is no return
+value for this function, data will be saved in the folder specified by the
+user.
 }
 \examples{
 \dontrun{

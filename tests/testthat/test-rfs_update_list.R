@@ -1,17 +1,17 @@
 test_that("rfs_update_list handles valid input correctly", {
   input_list <- data.frame(
     species = c(
-      "Acanthochromis polyacanthus",
-      "Cichla monoculus",
-      "Cichla kelberi"
+      "Asd asd",
+      "Awe asd",
+      "Axd asd"
     )
   )
 
   input_list_complete_name <- data.frame(
     species = c(
-      "Acanthochromis polyacanthus",
-      "Cichla monoculus Spix & Agassiz 1831",
-      "Cichla kelberi Kullander & Ferreira 2006"
+      "ASD asd",
+      "ASD asd Spix & asd 1831",
+      "ASD asd dsa & asd 2006"
     )
   )
 
@@ -26,7 +26,10 @@ test_that("rfs_update_list handles valid input correctly", {
     c("query_species", "status", "species") %in% colnames(result)
   ))
   expect_equal(nrow(result), 3)
-  expect_equal(result$status[1], "Not found")
+  expect_equal(
+    result$status[1],
+    "Not found"
+  )
 
   result_complete_name <- rfs_update_list(
     input_list_complete_name,

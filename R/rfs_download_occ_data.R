@@ -4,7 +4,9 @@
 #' constraints and server limitations while downloading the data. If the first
 #' execution did not work properly, please try to rerun the function using the
 #' same code. Alternatively, you can use the link, showed during function
-#' execution, to download the data manually.
+#' execution, to download the data manually. IMPORTANT: There is no return
+#' value for this function, data will be saved in the folder specified by the
+#' user.
 #' @param gbif_user GBIF username.
 #' @param gbif_pwd GBIF password.
 #' @param gbif_email GBIF email.

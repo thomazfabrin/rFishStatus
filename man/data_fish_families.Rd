@@ -5,7 +5,7 @@
 \alias{data_fish_families}
 \title{List of families of fish}
 \format{
-An object of class \code{character} of length 636.
+A character vector (or data frame, if that's the case) with family names.
 }
 \source{
 Obtained from the Eschemeyer's Catalog of Fishes and Fishbase.
@@ -14,6 +14,6 @@ Obtained from the Eschemeyer's Catalog of Fishes and Fishbase.
 data_fish_families
 }
 \description{
-A list of families to filter occurrence data.
+A dataset containing a list of fish families to filter occurrence data.
 }
 \keyword{datasets}

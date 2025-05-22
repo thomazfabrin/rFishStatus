@@ -4,3 +4,4 @@ support_R/
 .env
 occ_data/
 tests/testthat/.env
+.Rproj
