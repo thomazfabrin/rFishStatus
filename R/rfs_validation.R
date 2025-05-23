@@ -1,6 +1,6 @@
 #' @title Helper function to validate species names
 #' @description This function is used to filter species nomenclature
-#' from rFishStatusV1::rfs_update_occ_data() that should be manually checked.
+#' from rFishStatus::rfs_update_occ_data() that should be manually checked.
 #' @param species_database Species database according to rFishStatus template
 #' (see rFishStatus::data_template_ref).
 #' @param data A data frame representing the occurrence data to validate.
@@ -9,7 +9,7 @@
 #' @param data_type A character string representing the type of data to
 #' validate. Should be either "occ_data" or "spp_list". Default is "spp_list".
 #' @param ref_spp_list A data frame representing the species list to use as
-#' reference. Obtained using rFishStatusV1::rfs_get_species_list().
+#' reference. Obtained using rFishStatus::rfs_get_species_list().
 #' @return A list with two data frames: attention_df and correct_df.
 #' attention_df contains species that should be manually checked.
 #' @export

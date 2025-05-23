@@ -18,7 +18,7 @@ rFishStatus::rfs_update_spp_list()("spp_list").}
 validate. Should be either "occ_data" or "spp_list". Default is "spp_list".}
 
 \item{ref_spp_list}{A data frame representing the species list to use as
-reference. Obtained using rFishStatusV1::rfs_get_species_list().}
+reference. Obtained using rFishStatus::rfs_get_species_list().}
 }
 \value{
 A list with two data frames: attention_df and correct_df.
@@ -26,7 +26,7 @@ attention_df contains species that should be manually checked.
 }
 \description{
 This function is used to filter species nomenclature
-from rFishStatusV1::rfs_update_occ_data() that should be manually checked.
+from rFishStatus::rfs_update_occ_data() that should be manually checked.
 }
 \examples{
 species_database <- rFishStatus::data_template_ref
