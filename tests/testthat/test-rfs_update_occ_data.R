@@ -61,7 +61,7 @@ test_that("rfs_update_occ_data handles not found species and return a data.frame
   expect_s3_class(
     rfs_update_occ_data(
       occurrence_df = rFishStatus::data_occ_crenicichla,
-      species_database = rFishStatus:::data_crenicichla,
+      species_database = rFishStatus::data_crenicichla,
       family_names = "auto",
       folder = temp_folder
     ),

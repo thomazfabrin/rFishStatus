@@ -25,6 +25,7 @@ test_that("rfs_download_occ_data handles user", {
 })
 
 test_that("rfs_download_occ_data handles user polygon", {
+  # skip_on_cran()
   temp_folder <- tempfile("occ_data_test2")
   expect_no_error(
     rfs_download_occ_data(
@@ -61,7 +62,7 @@ test_that("rfs_download_occ_data handles non-numeric max_attempts and sleep_time
 })
 
 test_that("rfs_download_occ_data creates folder", {
-  skip_on_cran()
+  # skip_on_cran()
   # dotenv::load_dot_env()
   temp_folder <- tempfile("occ_data_test2")
   dir.create(temp_folder)
@@ -82,7 +83,7 @@ test_that("rfs_download_occ_data creates folder", {
 })
 
 test_that("rfs_download_occ_data does not fail if folder already exists", {
-  skip_on_cran()
+  # skip_on_cran()
   # dotenv::load_dot_env()
   temp_folder <- tempfile("occ_data_test_folder2")
   dir.create(temp_folder)
