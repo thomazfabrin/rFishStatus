@@ -1,5 +1,6 @@
 test_that("rfs_detect_invasive works as expected", {
   temp_folder <- tempfile("occ_data_test")
+  dir.create(temp_folder)
   result <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
     occurrence_df = rFishStatus::data_occ_crenicichla,
@@ -20,6 +21,7 @@ test_that("rfs_detect_invasive works as expected", {
 
 test_that("rfs_detect_invasive handles logical parameters ", {
   temp_folder <- tempfile("occ_data_test")
+  dir.create(temp_folder)
 
   occ_w_basins <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
@@ -52,6 +54,8 @@ test_that("rfs_detect_invasive handles logical parameters ", {
 
 test_that("rfs_detect_invasive handles wrong entries", {
   temp_folder <- tempfile("occ_data_test")
+  dir.create(temp_folder)
+
   occ_w_basins <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
     occurrence_df = rFishStatus::data_occ_crenicichla,
