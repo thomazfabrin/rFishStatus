@@ -17,7 +17,7 @@
 #' species_database <- rFishStatus::data_template_ref
 #' species_list <- rFishStatus::rfs_get_species_list(species_database)
 #' ref_spp_list <- rFishStatus::rfs_get_species_list(species_database)
-#' attention_list <- rfs_validate(species_database, species_list, "spp_list", ref_spp_list)
+#' attention_list <- rfs_validation(species_database, species_list, "spp_list", ref_spp_list)
 
 rfs_validation <- function(
     species_database,

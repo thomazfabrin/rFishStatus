@@ -11,7 +11,7 @@ rfs_join_basins(occ_df, shapefile = "br_pr_basins")
 rFishStatus::rfs_update_occ_data().}
 
 \item{shapefile}{A character string specifying the shapefiles contained in the package.
-The default is "br_pr_basins". The user can also provide a shapefile directly.
+The default is "br_pr_basins". The user can also provide a shapefile directly in sf format.
 Obs.: for now, only the shapefile "br_pr_basins" is available directly
 from the package. New opstions will be added in the future.}
 }

@@ -4,7 +4,7 @@
 #' @param occ_df A data frame of occurrences obtained from
 #' rFishStatus::rfs_update_occ_data().
 #' @param shapefile A character string specifying the shapefiles contained in the package.
-#' The default is "br_pr_basins". The user can also provide a shapefile directly.
+#' The default is "br_pr_basins". The user can also provide a shapefile directly in sf format.
 #' Obs.: for now, only the shapefile "br_pr_basins" is available directly
 #' from the package. New opstions will be added in the future.
 #' @return A data frame of the joined occurrences and basins.
@@ -13,7 +13,9 @@
 #' occ_df <- rFishStatus:::data_occ_update_result
 #' rfs_join_basins(occ_df, "br_pr_basins")
 rfs_join_basins <- function(occ_df, shapefile = "br_pr_basins") {
-    if (shapefile == "br_pr_basins") shapefile <- rFishStatus:::br_pr_basins
+    if (shapefile == "br_pr_basins" && !is.null(shapefile)) {
+        shapefile <- rFishStatus:::br_pr_basins
+    }
 
     if (is.null(shapefile)) {
         cli::cli_abort(
@@ -40,6 +42,14 @@ rfs_join_basins <- function(occ_df, shapefile = "br_pr_basins") {
         cli::cli_abort(
             c(
                 "The occurrence dataset does not have the same columns as the output from rFishStatus::rfs_updated_occ_data()."
+            )
+        )
+    }
+
+    if (!"sf" %in% class(shapefile)) {
+        cli::cli_abort(
+            c(
+                "The shapefile format is not correct. Please check."
             )
         )
     }
