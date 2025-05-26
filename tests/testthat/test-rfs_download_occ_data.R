@@ -25,9 +25,8 @@ test_that("rfs_download_occ_data handles user", {
 })
 
 test_that("rfs_download_occ_data handles user polygon", {
-  skip_on_cran()
+  # skip_on_cran()
   temp_folder <- tempfile("occ_data_test2")
-  dir.create(temp_folder)
   expect_no_error(
     rfs_download_occ_data(
       gbif_user = Sys.getenv("GBIF_USER"),
@@ -63,7 +62,7 @@ test_that("rfs_download_occ_data handles non-numeric max_attempts and sleep_time
 })
 
 test_that("rfs_download_occ_data creates folder", {
-  skip_on_cran()
+  # skip_on_cran()
   # dotenv::load_dot_env()
   temp_folder <- tempfile("occ_data_test2")
   dir.create(temp_folder)

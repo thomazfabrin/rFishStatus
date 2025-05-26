@@ -1,8 +1,9 @@
 test_that("rfs_detect_invasive works as expected", {
+  temp_folder <- tempfile("occ_data_test")
   result <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
     occurrence_df = rFishStatus::data_occ_crenicichla,
-    folder = "occ_data"
+    folder = temp_folder
   ) |>
     rFishStatus::rfs_join_basins() |>
     rFishStatus::rfs_detect_invasive(
@@ -18,10 +19,12 @@ test_that("rfs_detect_invasive works as expected", {
 })
 
 test_that("rfs_detect_invasive handles logical parameters ", {
+  temp_folder <- tempfile("occ_data_test")
+
   occ_w_basins <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
     occurrence_df = rFishStatus::data_occ_crenicichla,
-    folder = "occ_data"
+    folder = temp_folder
   ) |>
     rFishStatus::rfs_join_basins()
 
@@ -48,10 +51,11 @@ test_that("rfs_detect_invasive handles logical parameters ", {
 })
 
 test_that("rfs_detect_invasive handles wrong entries", {
+  temp_folder <- tempfile("occ_data_test")
   occ_w_basins <- rFishStatus::rfs_update_occ_data(
     species_database = rFishStatus::data_template_ref,
     occurrence_df = rFishStatus::data_occ_crenicichla,
-    folder = "occ_data"
+    folder = temp_folder
   ) |>
     rFishStatus::rfs_join_basins()
 
