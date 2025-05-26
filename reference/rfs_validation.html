@@ -97,8 +97,10 @@ attention_df contains species that should be manually checked.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Creating final dataset.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding habitat information.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Species list created successfully.</span>
-<span class="r-in"><span><span class="va">attention_list</span> <span class="op">&lt;-</span> <span class="fu">rfs_validate</span><span class="op">(</span><span class="va">species_database</span>, <span class="va">species_list</span>, <span class="st">"spp_list"</span>, <span class="va">ref_spp_list</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in rfs_validate(species_database, species_list, "spp_list", ref_spp_list):</span> could not find function "rfs_validate"</span>
+<span class="r-in"><span><span class="va">attention_list</span> <span class="op">&lt;-</span> <span class="fu">rfs_validation</span><span class="op">(</span><span class="va">species_database</span>, <span class="va">species_list</span>, <span class="st">"spp_list"</span>, <span class="va">ref_spp_list</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::mutate(dplyr::mutate_all(dplyr::mutate_all(spp_list, ~stringr::str_replace_all(.,     "  +", " ")), ~stringr::str_trim(.)), correct_valid_one = dplyr::if_else(stringr::str_detect(status,     "Valid|valid") &amp; stringr::str_detect(species, query_species) &amp;     stringr::str_detect(valid_scientific_name, query_species),     TRUE, FALSE), correct_valid_one = dplyr::if_else(stringr::str_detect(status,     "Valid|valid") &amp; query_species == valid_scientific_name,     TRUE, correct_valid_one), correct_valid_two = dplyr::if_else(stringr::str_detect(status,     "Valid|valid") &amp; query_species %in% valid_spp, TRUE, FALSE),     correct_valid_two = dplyr::if_else(query_species %in% valid_spp_complete_name,         TRUE, correct_valid_two), correct_valid_three = dplyr::if_else(correct_valid_one ==         TRUE &amp; correct_valid_two == TRUE, TRUE, FALSE), correct_valid_three = dplyr::if_else(correct_valid_three ==         TRUE &amp; stringr::str_detect(status, "Valid|valid"), TRUE,         FALSE)):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `correct_valid_one = dplyr::if_else(...)`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'query_species' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -110,7 +112,7 @@ attention_df contains species that should be manually checked.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer></div>
