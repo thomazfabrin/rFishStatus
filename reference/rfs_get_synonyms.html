@@ -81,14 +81,23 @@ a character vector of its synonyms.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">ref_list</span> <span class="op">&lt;-</span> <span class="fu">rFishStatus</span><span class="fu">::</span><span class="fu"><a href="rfs_get_species_list.html">rfs_get_species_list</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>   <span class="fu">rFishStatus</span><span class="fu">::</span><span class="va">template_ref_data</span></span></span>
+<span class="r-in"><span>   <span class="fu">rFishStatus</span><span class="fu">::</span><span class="va"><a href="data_template_ref.html">data_template_ref</a></span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> 'template_ref_data' is not an exported object from 'namespace:rFishStatus'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Creating species list from the input dataset.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Looking for uncertain species.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Looking for valid species.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Looking for all previous valid species names.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Filtering valid species.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Checking for inconsistencies.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Creating final dataset.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Adding habitat information.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Species list created successfully.</span>
 <span class="r-in"><span><span class="va">species</span> <span class="op">&lt;-</span> <span class="st">"Crenicichla britskii"</span></span></span>
 <span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">rfs_get_synonyms</span><span class="op">(</span><span class="va">ref_list</span>, <span class="va">species</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'ref_list' not found</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'result' not found</span>
+<span class="r-in"><span><span class="va">result</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $`Saxatilia britskii (Kullander 1982)`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Crenicichla britskii Kullander 1982"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
