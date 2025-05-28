@@ -14,7 +14,7 @@
 #' @export
 #' @examples
 #' ref_list <- rFishStatus::rfs_get_species_list(
-#'    rFishStatus::template_ref_data
+#'    rFishStatus::data_template_ref
 #' )
 #' species <- "Crenicichla britskii"
 #' result <- rfs_get_synonyms(ref_list, species)
