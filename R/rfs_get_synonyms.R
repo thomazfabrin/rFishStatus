@@ -18,7 +18,7 @@
 #' )
 #' species <- "Crenicichla britskii"
 #' result <- rfs_get_synonyms(ref_list, species)
-#' print(result)
+#' result
 rfs_get_synonyms <- function(
     ref_list,
     species,
