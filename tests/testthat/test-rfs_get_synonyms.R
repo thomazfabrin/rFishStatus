@@ -97,7 +97,7 @@ test_that("rfs_get_synonyms handles all_species and complete_names", {
     species = "Crenicichla britskii",
     all_species = TRUE
   )
-  expect_true(is.list(result_all_species))
+  expect_true(is.character(result_all_species))
   expect_true(length(result_all_species) > 0)
 
   result_complete_names <- rFishStatus::rfs_get_synonyms(
