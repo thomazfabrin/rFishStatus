@@ -26,7 +26,7 @@ test_that("rfs_download_occ_data handles user", {
 
 test_that("rfs_download_occ_data handles user polygon", {
   # skip_on_cran()
-  dotenv::load_dot_env()
+  # dotenv::load_dot_env()
   temp_folder <- tempfile("occ_data_test2")
   expect_no_error(
     rfs_download_occ_data(
