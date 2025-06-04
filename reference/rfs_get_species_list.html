@@ -65,10 +65,9 @@ organized a list of species names with their status.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Looking for valid species.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Looking for all previous valid species names.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Filtering valid species.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Checking for inconsistencies.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Creating final dataset.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Adding habitat information.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Species list created successfully.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in dplyr::filter(dplyr::mutate(dplyr::mutate(species_df, genus = stringr::str_extract(scientific_name,     "\\w+"), epithet = stringr::str_extract(scientific_name,     stringr::regex("(?&lt;=\\s)[a-z]+(\\s(?![a-z]*\\.)[a-z]+)*"))),     species = paste(genus, epithet, sep = " "), year = as.numeric(stringr::str_extract(scientific_name_author,         "\\d{4}")), authors = stringr::str_replace(scientific_name_author,         paste0(" ", year), ""), scientific_name = stringr::str_replace_all(scientific_name,         "\\[.*?\\]", ""), scientific_name = stringr::str_trim(scientific_name,         side = "both"), status = dplyr::if_else(scientific_name %in%         valid_spp_list, "Valid", status), status = dplyr::if_else(scientific_name ==         valid_scientific_name, "Valid", status)), !(status ==     "Valid" &amp; scientific_name != valid_scientific_name), year !=     "Invalid Number", year &lt;= lubridate::year(Sys.Date()), !grepl("^\\w+ &amp; \\w+ \\d{4}$",     scientific_name), !grepl("^[a-z]", scientific_name), !stringr::str_detect(scientific_name,     " \\[ref. "), !stringr::str_detect(scientific_name, "^\\["),     !stringr::str_detect(scientific_name, ";")):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `year &lt;= lubridate::year(Sys.Date())`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `loadNamespace()`:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> there is no package called ‘lubridate’</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
