@@ -28,6 +28,7 @@ test_that("rfs_download_occ_data handles user polygon", {
   # skip_on_cran()
   # dotenv::load_dot_env()
   temp_folder <- tempfile("occ_data_test2")
+  dir.create(temp_folder)
   expect_no_error(
     rfs_download_occ_data(
       gbif_user = Sys.getenv("GBIF_USER"),
