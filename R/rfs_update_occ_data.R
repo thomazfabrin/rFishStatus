@@ -189,12 +189,12 @@ rfs_update_occ_data <- function(
     cli::cli_alert("Checking for inconsistencies...")
     n_occ_solved <- df_occ_verified |>
         dplyr::filter(status_ref != "Not found") |>
-        dplyr::distinct() |>
+        # dplyr::distinct() |>
         nrow()
     not_found <- df_occ_verified |>
         dplyr::filter(status_ref == "Not found") |>
         dplyr::select(species_gbif) |>
-        dplyr::distinct() |>
+        # dplyr::distinct() |>
         dplyr::pull(species_gbif)
     n_occ_raw <- nrow(df_occ_filtered)
 
