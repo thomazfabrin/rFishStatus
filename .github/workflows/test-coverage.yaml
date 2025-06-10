@@ -25,6 +25,18 @@ jobs:
         with:
           use-public-rspm: true
 
+      # ADD THIS: Install system dependencies for spatial packages
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgdal-dev \
+            libproj-dev \
+            libgeos-dev \
+            libudunits2-dev \
+            libnetcdf-dev \
+            libsqlite3-dev
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           needs: coverage
@@ -49,3 +61,13 @@ jobs:
             token = Sys.getenv("CODECOV_TOKEN")
           )
         shell: Rscript {0}
+
+      - name: Debug test failure
+        if: failure()
+        run: |
+          echo "=== R Session Info ==="
+          R -e "sessionInfo()"
+          echo "=== Test Output Files ==="
+          find /tmp -name "*.Rout.fail" -exec echo "File: {}" \; -exec cat {} \; 2>/dev/null || echo "No .Rout.fail files found"
+          echo "=== Test Directory ==="
+          ls -la tests/testthat/ || echo "No tests/testthat directory"
