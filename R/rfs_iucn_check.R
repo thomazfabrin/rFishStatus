@@ -21,7 +21,7 @@
 #' }
 #' @export
 #'
-rfs_iucn_check <- function(species, iucn_api_key, log_path = "iucn_log") {
+rfs_iucn_check <- function(species, iucn_api_key, log_path) {
     if (missing(species)) {
         cli::cli_abort(
             "Species must be provided."
@@ -38,7 +38,7 @@ rfs_iucn_check <- function(species, iucn_api_key, log_path = "iucn_log") {
         dir.create(log_path, recursive = TRUE)
     }
 
-    iucn_function <- function(species, iucn_api_key, log_path = "iucn_log") {
+    iucn_function <- function(species, iucn_api_key, log_path) {
         genus <- stringr::str_extract(species, "^[^ ]+")
         epithet <- stringr::str_extract(species, "(?<= )[A-Za-z-]+")
 

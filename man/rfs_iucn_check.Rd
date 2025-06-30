@@ -4,7 +4,7 @@
 \alias{rfs_iucn_check}
 \title{Check IUCN Red List Status for a Species}
 \usage{
-rfs_iucn_check(species, iucn_api_key, log_path = "iucn_log")
+rfs_iucn_check(species, iucn_api_key, log_path)
 }
 \arguments{
 \item{species}{Character. The full species name in the format "Genus epithet" (e.g., "Pterophyllum scalare"). Multiple species can be checked by providing a vector of species names.}
