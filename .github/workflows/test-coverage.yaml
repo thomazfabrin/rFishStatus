@@ -17,6 +17,7 @@ jobs:
       GBIF_USER: ${{ secrets.GBIF_USER }}
       GBIF_PWD: ${{ secrets.GBIF_PWD }}
       GBIF_EMAIL: ${{ secrets.GBIF_EMAIL }}
+      IUCN_API_KEY: ${{ secrets.IUCN_API_KEY }}
 
     steps:
       - uses: actions/checkout@v3
