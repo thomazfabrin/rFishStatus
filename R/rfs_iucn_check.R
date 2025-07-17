@@ -17,11 +17,11 @@
 #'
 #' @examples
 #' \dontrun{
-#' rfs_iucn_check("Pterophyllum", "scalare", "your_api_key")
+#' rfs_iucn_check("Pterophyllum scalare", "your_api_key")
 #' }
 #' @export
 #'
-rfs_iucn_check <- function(species, iucn_api_key, log_path) {
+rfs_iucn_check <- function(species, iucn_api_key, log_path = "iucn_log/") {
     if (missing(species)) {
         cli::cli_abort(
             "Species must be provided."
