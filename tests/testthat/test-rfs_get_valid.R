@@ -1,5 +1,5 @@
 test_that("rfs_get_synonyms works correctly", {
-  ref_list <- rFishStatus::rfs_get_species_list(
+  ref_list <- rFishStatus::rfs_get_valid(
     rFishStatus::data_template_ref
   )
 
@@ -26,7 +26,7 @@ test_that("rfs_get_synonyms works correctly", {
 })
 
 test_that("rfs_get_synonyms handles empty input", {
-  ref_list <- rFishStatus::rfs_get_species_list(
+  ref_list <- rFishStatus::rfs_get_valid(
     rFishStatus::data_template_ref
   )
 
@@ -39,7 +39,7 @@ test_that("rfs_get_synonyms handles empty input", {
 })
 
 test_that("rfs_get_synonyms handles invalid input", {
-  ref_list <- rFishStatus::rfs_get_species_list(
+  ref_list <- rFishStatus::rfs_get_valid(
     rFishStatus::data_template_ref
   )
 
@@ -88,7 +88,7 @@ test_that("rfs_get_synonyms handles invalid input", {
 })
 
 test_that("rfs_get_synonyms handles all_species and complete_names", {
-  ref_list <- rFishStatus::rfs_get_species_list(
+  ref_list <- rFishStatus::rfs_get_valid(
     rFishStatus::data_template_ref
   )
 

@@ -1,11 +1,11 @@
-#' @title Get Synonyms for Given Species
-#' @description This function retrieves synonyms for given species from a
+#' @title Get Previous Valid Names for Given Species
+#' @description This function retrieves previous valid names for given species from a
 #' reference list.
 #' @param ref_list A data frame containing reference species data obtained using
 #' rFishStatus::rfs_get_species_list() function.
 #' @param species A character vector representing the species names to query.
-#' @param all_species A logical value indicating whether to return all synonyms
-#' (default is FALSE). If TRUE, returns all synonyms as a vector.
+#' @param all_species A logical value indicating whether to return all previous names
+#' (default is FALSE). If TRUE, returns all previous_valid as a vector.
 #' @param complete_names A logical value indicating whether to return complete
 #' scientific names (default is FALSE) in all species list. If TRUE, returns full scientific names
 #' including author and year.
@@ -17,9 +17,9 @@
 #'    rFishStatus::data_template_ref
 #' )
 #' species <- "Crenicichla britskii"
-#' result <- rfs_get_synonyms(ref_list, species)
+#' result <- rfs_get_valid(ref_list, species)
 #' result
-rfs_get_synonyms <- function(
+rfs_get_valid <- function(
     ref_list,
     species,
     all_species = FALSE,
@@ -53,7 +53,7 @@ rfs_get_synonyms <- function(
     sp_query <- species[1]
     remaining_species <- species[-1]
 
-    synonyms <- ref_list |>
+    previous_valid <- ref_list |>
         dplyr::filter(
             stringr::str_detect(
                 stringr::str_squish(valid_scientific_name),
@@ -65,7 +65,7 @@ rfs_get_synonyms <- function(
         dplyr::pull(scientific_name) |>
         unique()
 
-    if (length(synonyms) == 0) {
+    if (length(previous_valid) == 0) {
         valid_sp <- ref_list |>
             dplyr::filter(stringr::str_detect(
                 stringr::str_squish(scientific_name),
@@ -74,7 +74,7 @@ rfs_get_synonyms <- function(
             dplyr::distinct() |>
             dplyr::pull(valid_scientific_name)
 
-        synonyms <- ref_list |>
+        previous_valid <- ref_list |>
             dplyr::filter(
                 valid_scientific_name %in% valid_sp & status != "Valid"
             ) |>
@@ -91,13 +91,17 @@ rfs_get_synonyms <- function(
 
     result <- list()
 
-    if (length(valid_sp) != 0 || length(synonyms) != 0) {
-        if (length(valid_sp) == 0) valid_sp <- "No valid species found"
-        if (length(synonyms) == 0) synonyms <- "No synonyms found"
-        result[[valid_sp]] <- synonyms
+    if (length(valid_sp) != 0 || length(previous_valid) != 0) {
+        if (length(valid_sp) == 0) {
+            valid_sp <- "No valid species found"
+        }
+        if (length(previous_valid) == 0) {
+            previous_valid <- "No previous_valid found"
+        }
+        result[[valid_sp]] <- previous_valid
     }
 
-    remaining_result <- rFishStatus::rfs_get_synonyms(
+    remaining_result <- rFishStatus::rfs_get_valid(
         ref_list,
         remaining_species,
         all_species,
@@ -114,7 +118,9 @@ rfs_get_synonyms <- function(
         synonyms_spp <- unlist(result) |>
             stringr::str_squish() |>
             unique()
-        synonyms_spp <- synonyms_spp[synonyms_spp != "No synonyms found"]
+        synonyms_spp <- synonyms_spp[
+            synonyms_spp != "No previous valid names found"
+        ]
 
         all_spp <- c(valid_spp, synonyms_spp)
         all_spp <- all_spp[nzchar(all_spp)]
